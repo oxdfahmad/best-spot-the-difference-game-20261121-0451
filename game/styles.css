@@ -1,0 +1,57 @@
+/* Twin Lanterns — page chrome around the game canvas. */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #120e20;
+  color: #f4f1e6;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage {
+  width: 1280px;
+  max-width: 100vw;
+  padding: 12px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
+  cursor: crosshair;
+  touch-action: manipulation;
+}
+
+.help {
+  margin: 10px 4px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #b8abd8;
+  text-align: center;
+}
+
+/* Screenshot staging: the canvas alone fills the 1280x480 frame. */
+body.shot {
+  display: block;
+}
+
+body.shot .stage {
+  width: 1280px;
+  max-width: none;
+  padding: 0;
+}
+
+body.shot canvas {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.shot .help {
+  display: none;
+}
